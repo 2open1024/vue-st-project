@@ -6,6 +6,8 @@
 </script>
 
 <template>
-    <div>open1024</div>
+    <div class="text-xs text-red-500">open1024</div>
     <div>{{ user.token }}</div>
+    <el-button type="primary">按钮</el-button>
+    <el-icon><Search/></el-icon>
 </template>
