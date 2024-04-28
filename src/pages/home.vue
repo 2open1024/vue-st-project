@@ -1,5 +1,8 @@
 <script setup>
 import Header from "@/components/Header.vue";
+import Classify from "../components/Classify.vue";
+import Swiper from "../components/Swiper.vue";
+import UserOrUnlogin from "../components/UserOrUnlogin.vue";
 </script>
 
 <template>
@@ -19,8 +22,11 @@ import Header from "@/components/Header.vue";
     <div class="w-[1200px] mx-auto mt-4 mb-4">
       <div class="flex items-center justify-between">
         <!-- {/* 分类导航 */} -->
+        <Classify/>
         <!-- {/* 轮播图 */} -->
+        <Swiper/>
         <!-- {/* 新人福利 */} -->
+        <UserOrUnlogin/>
       </div>
       <!-- {/* 高单价导航 */} -->
       <!-- {/* 课程分类列表 */} -->

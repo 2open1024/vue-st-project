@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import router from './router/router.js'
 import { createPinia } from 'pinia'
+import piniaPersist from 'pinia-plugin-persist'
 import App from './App.vue'
 
 import ElementPlus from "element-plus";
@@ -18,6 +19,7 @@ Object.keys(ElementPlusIconsVue).forEach((key) => {
 
 
 const pina = createPinia();
+pina.use(piniaPersist);
 
 app.use(router).use(pina).use(ElementPlus);
 

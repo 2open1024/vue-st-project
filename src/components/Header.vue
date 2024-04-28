@@ -1,12 +1,24 @@
 <script setup>
 import { ref } from "vue";
 import { Search } from "@element-plus/icons-vue";
+import Register from "./Register.vue"
+import Login from "./Login.vue";
+import { useUserStore } from "@/store/user.js";
+import { useModalStore } from "@/store/modal.js";
+
+
 
 const input = ref("");
 
-const login = () => {};
+const user = useUserStore();
+const modal = useModalStore();
 
-const register = () => {};
+console.log(user.logout11)
+
+
+// const login = () => {};
+
+// const register = () => {};
 </script>
 
 <template>
@@ -51,9 +63,24 @@ const register = () => {};
       <a href="#">兑换码</a>
       <a href="#">云服务器</a>
     </div>
-    <div>
-      <el-button link size="large" @click="login">登录</el-button>
-      <el-button link size="large" @click="register">注册</el-button>
+    <div v-if="!user.isLogin">
+      <el-button link size="large" @click="modal.switchLoginVisible"
+        >登录</el-button
+      >
+      <el-button link size="large" @click="modal.switchRegVisible"
+        >注册</el-button
+      >
     </div>
+    <div v-else>
+      <el-popconfirm title="是否退出登录？"@confirm="user.logout">
+        <template #reference>
+          <el-button>{{ user.users.account }}</el-button>
+        </template>
+      </el-popconfirm>
+    </div>
+
+    <Register />
+    <Login/>
   </div>
+  
 </template>
