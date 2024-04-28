@@ -3,6 +3,7 @@ import Header from "@/components/Header.vue";
 import Classify from "../components/Classify.vue";
 import Swiper from "../components/Swiper.vue";
 import UserOrUnlogin from "../components/UserOrUnlogin.vue";
+import CourseList from "../components/CourseList.vue";
 </script>
 
 <template>
@@ -30,6 +31,7 @@ import UserOrUnlogin from "../components/UserOrUnlogin.vue";
       </div>
       <!-- {/* 高单价导航 */} -->
       <!-- {/* 课程分类列表 */} -->
+      <CourseList/>
     </div>
     <!-- {/* 底部的内容导航 */} -->
   </div>
